@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  starts_at: 2019-02-26 10:10:04
+  ends_at: 2019-02-26 10:10:04
+  load_type: MyString
+  load_sum: 1.5
+  cities: one
+  stops_amount: 1
+  vehicle: one
+  driver: one
+
+two:
+  starts_at: 2019-02-26 10:10:04
+  ends_at: 2019-02-26 10:10:04
+  load_type: MyString
+  load_sum: 1.5
+  cities: two
+  stops_amount: 1
+  vehicle: two
+  driver: two

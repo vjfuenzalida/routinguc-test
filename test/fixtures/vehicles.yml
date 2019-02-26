@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  capacity: 1.5
+  load_type: MyString
+  driver: one
+
+two:
+  capacity: 1.5
+  load_type: MyString
+  driver: two
