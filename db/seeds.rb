@@ -1,12 +1,12 @@
-# frozen_string_literal: true
+### Constants!!
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+DRIVER_COUNT = 50
+VEHICLE_COUNT = 40
+WITHOUT_DRIVER = 10
+ROUTE_COUNT = 20
+MIN_CAPACITY = 100
+MAX_CAPACITY = 500
+LOAD_TYPES = %w[general refrigerated].freeze
 
 ####### CITIES #######
 
@@ -17,7 +17,6 @@ end
 
 ####### DRIVERS #######
 
-DRIVER_COUNT = 50
 
 # Generate parameters for drivers
 names = Array.new(DRIVER_COUNT).map { |_t| Faker::Name.name }
@@ -37,12 +36,6 @@ DRIVER_COUNT.times do |t|
 end
 
 ####### VEHICLES #######
-
-VEHICLE_COUNT = 40
-WITHOUT_DRIVER = 10
-MIN_CAPACITY = 100
-MAX_CAPACITY = 500
-LOAD_TYPES = %w[general refrigerated].freeze
 
 # Generate parameters for vehicles
 capacities = Array.new(VEHICLE_COUNT).map do |_t|
@@ -65,8 +58,6 @@ end
 
 ####### ROUTES #######
 
-ROUTE_COUNT = 20
-
 ROUTE_COUNT.times do |_t|
   today = DateTime.parse('2019-02-27 00:00:00-03:00')
   start_hour = rand(2..14)
@@ -84,48 +75,3 @@ ROUTE_COUNT.times do |_t|
     cities: City.from_rm.sample(rand(1..3))
   )
 end
-
-# Route.create(
-#   starts_at: DateTime.parse('2019-02-27 04:05:06-03:00'),
-#   ends_at: DateTime.parse('2019-02-27 05:30:35-03:00'),
-#   load_type: 'refrigerated',
-#   load_sum: 320,
-#   stops_amount: 5,
-#   cities: City.from_rm.sample(1)
-# )
-
-# Route.create(
-#   starts_at: DateTime.parse('2019-02-27 03:45:06-03:00'),
-#   ends_at: DateTime.parse('2019-02-27 06:30:35-03:00'),
-#   load_type: 'general',
-#   load_sum: 400,
-#   stops_amount: 8,
-#   cities: City.from_rm.sample(3)
-# )
-
-# Route.create(
-#   starts_at: DateTime.parse('2019-02-27 09:05:06-03:00'),
-#   ends_at: DateTime.parse('2019-02-27 05:30:35-03:00'),
-#   load_type: 'refrigerated',
-#   load_sum: 220,
-#   stops_amount: 6,
-#   cities: City.from_rm.sample(2)
-# )
-
-# Route.create(
-#   starts_at: DateTime.now + 3.hour,
-#   ends_at: DateTime.now + 5.hour + 35.minutes,
-#   load_type: 'general',
-#   load_sum: 120,
-#   stops_amount: 3,
-#   cities: City.from_rm.sample(2)
-# )
-
-# Route.create(
-#   starts_at: DateTime.now - 4.hour,
-#   ends_at: DateTime.now - 2.hour,
-#   load_type: 'general',
-#   load_sum: 120,
-#   stops_amount: 3,
-#   cities: City.from_rm.sample(4)
-# )
